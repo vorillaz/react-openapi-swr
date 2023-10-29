@@ -8,6 +8,10 @@ The rationale behind this repository is to demonstrate the capabilities of [Swag
 
 Using the OpenAPI specification, Swagger allows you to describe your APIs and export the definitions in a JSON or YAML file. This file can then be used to automatically generate an API client on top of [SWR](https://swr.vercel.app/), a React Hooks library for remote data fetching. Furthermore, we will prodive data mocks using [Mock Service Worker](https://mswjs.io/), a library that allows you to mock API endpoints your tests and development environment.
 
+## The Pizza App 🍕 
+
+The API that we will be using is a simple API for managing a pizza menu. The API allows you to list the pizzas and add a new pizza in the menu. 
+
 ## Getting started
 
 In order to get started, you need to have [Node.js](https://nodejs.org/en/)  and [pnpm](https://pnpm.io/) installed on your machine. Once you have installed the dependencies, you can run the following commands:
@@ -51,6 +55,11 @@ This repository is meant to be a starting point for your own projects. You can u
 #### 🔧 Reuse the schema validation rules on the frontend
 Schema validation for mutations might get a bit verbose, you can reuse the schema validation rules on the frontend by using [zod](https://zod.dev/) then you can use the `zod-to-openapi` package to convert the zod schema to OpenAPI definitions and reuse them on the frontend forms and the backend validation.
 
+
+#### 🧪 Tweak the `mocks` configuration
+Orval allows you to tweak the configuration of the mocks, you can embed your own fake data and try to generate the mocks. Try to tweak the data and extend the [`<Listing/>`](client/src/__tests__/listing.tsx) test to cover more cases. _Tip:_ You can try to validate the pizza names and prices.
+
+
 #### ✂️ Split the client SDK into multiple files
 If you have a large API, you might want to organize your APIs using `tags` and then split the API sdk into multiple files. You can do so by using the `split` flag of the Orval CLI. You can find more information about the flag in the [official documentation](https://orval.dev/).
 
@@ -65,6 +74,11 @@ Documentation is a key part of any API, you can use the OpenAPI definitions to g
 
 #### 🪛 Use a different backend framework
 You can use a different backend framework such as [NestJS](https://nestjs.com/) or [Express](https://expressjs.com/) or totally move away from the Node.js ecosystem and use a totally different language and framework. The OpenAPI specification is language and framework agnostic. There is a exhaustive list of OpenAPI tools, integrations and libraries [available](https://openapi.tools/)
+
+#### 🔄 Use GitHub Actions to automatically generate the API client
+You can use GitHub Actions to automatically generate the API client and the mocks on every push to the `main` branch. You can find more information about GitHub Actions in the [official documentation](https://docs.github.com/en/actions). You may also need to move the `server` folder to a separate repository and try to synchronize the changes between the two repositories.
+
+
 
 ## Technologies Used
 
