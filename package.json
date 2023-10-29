@@ -1,0 +1,19 @@
+{
+  "name": "react-fastify-openapi",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "packageManager": "pnpm@8.9.2",
+  "scripts": {
+    "start": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "dev": "turbo dev",
+    "orval": "orval"
+  },
+  "devDependencies": {
+    "turbo": "1.10.16",
+    "orval": "6.19.1",
+    "prettier": "3.0.3"
+  }
+}
